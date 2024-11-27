@@ -1,0 +1,110 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* 공통 레이아웃 */
+header, footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* 메인 컨테이너 레이아웃 */
+.main-container {
+    display: flex;
+    height: 100vh; /* 화면 전체 높이 */
+    background-color: #f5f5f5; /* 메인 배경 색 */
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 220px; /* 사이드바 폭 */
+    background-color: #ffffff; /* 흰색 배경 */
+    border-right: 1px solid #e0e0e0; /* 사이드바 오른쪽 경계선 */
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 사이드바 메뉴 */
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu-item {
+    display: block;
+    width: 100%;
+    padding: 12px 15px; /* 메뉴 항목 간격 */
+    color: #1a237e; /* 파란 글씨 */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px; /* 둥근 모서리 */
+    margin-bottom: 10px; /* 메뉴 간격 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 호버 효과 */
+}
+
+/* 사이드바 메뉴 hover 효과 */
+.sidebar .menu-item:hover {
+    background-color: #e3f2fd; /* 호버 시 파란색 배경 */
+    color: #0d47a1; /* 호버 시 더 짙은 파란색 글씨 */
+    cursor: pointer;
+}
+
+/* 본문 영역 스타일 */
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 버튼 스타일 */
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #0056b3;
+}

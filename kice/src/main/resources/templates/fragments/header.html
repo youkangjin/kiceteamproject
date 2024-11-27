@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Fragment</title>
+</head>
+<body>
+    <div th:fragment="header">
+        <header style="display: flex; align-items: center; justify-content: space-between; height: 60px; background-color: #1a237e; padding: 0 40px; color: white;">
+            <!-- 왼쪽 섹션 -->
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <img src="/images/kice_logo.svg" alt="Kice Logo" style="height: 40px;" />
+                <div style="width: 2px; height: 20px; background-color: white;"></div>
+                <img src="/images/ksyslogo.svg" alt="Ksystem Logo" style="height: 40px;" />
+                <h1 style="margin: 0; color: white; font-size: 20px; font-weight: 600; font-family: 'Arial, sans-serif';">
+                    학업성취도평가지원 시스템
+                </h1>
+            </div>
+
+            <!-- 오른쪽 섹션 -->
+            <div style="display: flex; align-items: center;" th:if="${isLoggedIn}">
+                <img src="/images/userIcon.svg" alt="User Icon" style="height: 20px;" />
+                <p style="margin-left: 8px; font-size: 16px; font-weight: 600;" th:text="${userName}">사용자 이름</p>
+                <form th:action="@{/logout}" method="post" style="margin: 0; padding: 0;">
+                    <button
+                        style="margin-left: 20px; padding: 6px 12px; background-color: #4caf50; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        로그아웃
+                        <img src="/images/logoutIcon.svg" alt="Logout Icon" style="height: 20px;" />
+                    </button>
+                </form>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

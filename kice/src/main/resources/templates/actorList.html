@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Actors</title>
+</head>
+<body>
+    <h1>Actor List</h1>
+    <ul>
+        <li th:each="actor : ${actors}">
+            <span th:text="${actor.a01Name}">Actor Name</span> - 
+            <span th:text="${actor.a01Status}">Actor Status</span>
+        </li>
+    </ul>
+</body>
+</html>

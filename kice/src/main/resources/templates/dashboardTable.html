@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard Table</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 80%; margin: 0 auto; padding: 20px;">
+        <h2>Dashboard Table</h2>
+        <table>
+            <!-- 테이블 헤더 -->
+            <thead>
+                <tr>
+                    <th th:each="header : ${headers}" th:text="${header}"></th>
+                </tr>
+            </thead>
+            <!-- 테이블 데이터 -->
+            <tbody>
+                <tr th:each="row : ${records}">
+                    <td th:each="cell : ${row}" th:text="${cell}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

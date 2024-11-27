@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Main</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <!-- 헤더 추가 -->
+    <div th:replace="~{fragments/header :: header}"></div>
+
+    <!-- 메인 컨테이너 -->
+    <div class="main-container">
+        <!-- 사이드바 추가 -->
+        <div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+        <!-- 대시보드 본문 -->
+        <main class="content">
+            <h1>Dashboard Main Page</h1>
+            <p>Welcome to the main dashboard page!</p>
+
+            <!-- Link to Dashboard Detail -->
+            <a href="/dashboard/detail" class="btn-link">
+                Go to Dashboard Detail
+            </a>
+        </main>
+    </div>
+</body>
+</html>

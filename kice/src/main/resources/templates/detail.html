@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detail Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div style="width: 80%; margin: 0 auto; padding: 20px;">
+        <!-- 제목 -->
+        <h2 th:text="${item.title}">Title Placeholder</h2>
+
+        <!-- 설명 -->
+        <p th:text="${item.description}">Description Placeholder</p>
+
+        <!-- 테이블 데이터 -->
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th th:each="header : ${headers}" th:text="${header}"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="row : ${records}">
+                    <td th:each="cell : ${row}" th:text="${cell}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 뒤로 가기 버튼 -->
+        <div style="margin-top: 20px;">
+            <button onclick="window.history.back()" style="padding: 10px;">Back</button>
+        </div>
+    </div>
+</body>
+</html>

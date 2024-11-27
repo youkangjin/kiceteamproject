@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div style="padding: 20px;">
+        <h2>Select an Option</h2>
+
+        <!-- 드롭다운 메뉴 -->
+        <div>
+            <label for="selectBox">Options:</label>
+            <select id="selectBox" name="selectedOption" th:field="*{selectedOption}">
+                <option th:each="option : ${options}" th:value="${option.value}" th:text="${option.label}"></option>
+            </select>
+        </div>
+
+        <!-- 선택된 값 표시 -->
+        <div style="margin-top: 20px;">
+            <p>Selected Option: <span th:text="${selectedOption}">None</span></p>
+        </div>
+
+        <!-- 폼 제출 버튼 -->
+        <form action="/select" method="post">
+            <button type="submit" style="padding: 10px;">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
