@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header Fragment</title>
+    <link rel="icon" type="image/x-icon" href="https://konestaticfiles.s3.ap-northeast-2.amazonaws.com/static/favicon.ico">
 </head>
 <body>
     <div th:fragment="header">
@@ -17,9 +18,8 @@
                     학업성취도평가지원 시스템
                 </h1>
             </div>
-
             <!-- 오른쪽 섹션 -->
-            <div style="display: flex; align-items: center;" th:if="${isLoggedIn}">
+            <div style="display: flex; align-items: center;" th:if="${true}">
                 <img src="/images/userIcon.svg" alt="User Icon" style="height: 20px;" />
                 <p style="margin-left: 8px; font-size: 16px; font-weight: 600;" th:text="${userName}">사용자 이름</p>
                 <form th:action="@{/logout}" method="post" style="margin: 0; padding: 0;">
