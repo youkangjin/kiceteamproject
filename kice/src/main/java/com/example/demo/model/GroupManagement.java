@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "GroupManagement")
+@Table(name = "group_management") // 테이블 이름을 소문자와 언더스코어 표기법으로 수정
 public class GroupManagement {
 
     @Id
@@ -19,7 +21,8 @@ public class GroupManagement {
     private String description;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
     // Getters and Setters
     public Long getGroupId() {

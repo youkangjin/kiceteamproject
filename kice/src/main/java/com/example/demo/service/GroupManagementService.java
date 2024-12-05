@@ -28,13 +28,16 @@ public class GroupManagementService {
 
     // 그룹 삭제
     public void deleteGroup(Long id) {
+        if (!groupRepository.existsById(id)) {
+            throw new RuntimeException("Group not found with id: " + id);
+        }
         groupRepository.deleteById(id);
     }
 
     // 그룹 수정
     public GroupManagement updateGroup(Long id, String newGroupName, String newDescription) {
         GroupManagement group = groupRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Group not found"));
+            .orElseThrow(() -> new RuntimeException("Group not found with id: " + id));
         group.setGroupName(newGroupName);
         group.setDescription(newDescription);
         return groupRepository.save(group);

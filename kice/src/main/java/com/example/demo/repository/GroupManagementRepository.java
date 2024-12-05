@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GroupManagementRepository extends JpaRepository<GroupManagement, Long> {
-    // 필요시 사용자 정의 메서드 추가 가능
+    // 추가 기능이 필요하면 정의 가능
 }
